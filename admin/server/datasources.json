@@ -18,6 +18,8 @@
     "name": "mysql",
     "user": "root",
     "connector": "mysql",
-    "models": {}
+    "models": {
+      
+    }
   }
 }

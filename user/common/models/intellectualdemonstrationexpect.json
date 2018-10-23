@@ -1278,12 +1278,12 @@
     "thirdpercent": {
       "type": "Number",
       "required": false,
-      "length": 50,
+      "length": 20,
       "precision": null,
       "scale": null,
       "mysql": {
         "columnName": "thirdpercent",
-        "dataType": "float",
+        "dataType": "Float",
         "dataLength": 20,
         "dataPrecision": null,
         "dataScale": null,

@@ -330,22 +330,6 @@
         "nullable": "Y"
       },
       "_selectable": true
-    },
-    "opinion": {
-      "type": "String",
-      "required": false,
-      "length": 500,
-      "precision": null,
-      "scale": null,
-      "mysql": {
-        "columnName": "opinion",
-        "dataType": "varchar",
-        "dataLength": 500,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
     }
   },
   "validations": [],
