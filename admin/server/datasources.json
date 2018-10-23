@@ -1,0 +1,25 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage"
+  },
+  "mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "dianchi",
+    "password": "Xx197202?",
+    "name": "mysql",
+    "user": "root",
+    "connector": "mysql",
+    "models": {
+      
+    }
+  }
+}
