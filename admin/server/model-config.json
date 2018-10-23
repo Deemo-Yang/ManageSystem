@@ -102,6 +102,10 @@
     "dataSource": "mysql",
     "public": true
   },
+  "Notice": {
+    "dataSource": "mysql",
+    "public": true
+  },
   "Intellectualdemonstration": {
     "dataSource": "mysql",
     "public": true,
@@ -114,24 +118,20 @@
     "$promise": {},
     "$resolved": true
   },
+  "Scienceproj": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Provinceassistancefunds": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
   "Intellectualpropertyapply": {
     "dataSource": "mysql",
     "public": true,
     "$promise": {},
     "$resolved": true
-  },
-  "Scienceproj": {
-    "dataSource": "mysql",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
-  },
-  "Provinceassistancefunds": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Notice": {
-    "dataSource": "mysql",
-    "public": true
   }
 }

@@ -158,15 +158,15 @@
     "responsetelephone": {
       "type": "Number",
       "required": false,
-      "length": 20,
-      "precision": null,
-      "scale": null,
+      "length": null,
+      "precision": 19,
+      "scale": 0,
       "mysql": {
         "columnName": "responsetelephone",
         "dataType": "bigint",
-        "dataLength": 11,
-        "dataPrecision": null,
-        "dataScale": null,
+        "dataLength": null,
+        "dataPrecision": 19,
+        "dataScale": 0,
         "nullable": "Y"
       },
       "_selectable": true
@@ -174,15 +174,15 @@
     "responsephone": {
       "type": "Number",
       "required": false,
-      "length": 20,
-      "precision": null,
-      "scale": null,
+      "length": null,
+      "precision": 19,
+      "scale": 0,
       "mysql": {
         "columnName": "responsephone",
         "dataType": "bigint",
-        "dataLength": 11,
-        "dataPrecision": null,
-        "dataScale": null,
+        "dataLength": null,
+        "dataPrecision": 19,
+        "dataScale": 0,
         "nullable": "Y"
       },
       "_selectable": true
@@ -222,15 +222,15 @@
     "contacttelephone": {
       "type": "Number",
       "required": false,
-      "length": 20,
-      "precision": null,
-      "scale": null,
+      "length": null,
+      "precision": 19,
+      "scale": 0,
       "mysql": {
         "columnName": "contacttelephone",
         "dataType": "bigint",
-        "dataLength": 11,
-        "dataPrecision": null,
-        "dataScale": null,
+        "dataLength": null,
+        "dataPrecision": 19,
+        "dataScale": 0,
         "nullable": "Y"
       },
       "_selectable": true
@@ -238,15 +238,15 @@
     "contactphone": {
       "type": "Number",
       "required": false,
-      "length": 20,
-      "precision": null,
-      "scale": null,
+      "length": null,
+      "precision": 19,
+      "scale": 0,
       "mysql": {
         "columnName": "contactphone",
         "dataType": "bigint",
-        "dataLength": 11,
-        "dataPrecision": null,
-        "dataScale": null,
+        "dataLength": null,
+        "dataPrecision": 19,
+        "dataScale": 0,
         "nullable": "Y"
       },
       "_selectable": true
@@ -407,6 +407,22 @@
         "dataLength": null,
         "dataPrecision": 10,
         "dataScale": 0,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "opinion": {
+      "type": "String",
+      "required": false,
+      "length": 500,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "opinion",
+        "dataType": "varchar",
+        "dataLength": 500,
+        "dataPrecision": null,
+        "dataScale": null,
         "nullable": "Y"
       },
       "_selectable": true

@@ -1,53 +1,36 @@
--- MySQL dump 10.13  Distrib 8.0.12, for macos10.13 (x86_64)
---
--- Host: localhost    Database: dianchi
--- ------------------------------------------------------
--- Server version	8.0.12
+-- --------------------------------------------------------
+-- 主机:                           localhost
+-- 服务器版本:                        5.5.61 - MySQL Community Server (GPL)
+-- 服务器操作系统:                      Win64
+-- HeidiSQL 版本:                  9.5.0.5196
+-- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8mb4 ;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `adminuser`
---
 
-DROP TABLE IF EXISTS `adminuser`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `adminuser` (
+-- 导出 dianchi 的数据库结构
+CREATE DATABASE IF NOT EXISTS `dianchi` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `dianchi`;
+
+-- 导出  表 dianchi.adminuser 结构
+CREATE TABLE IF NOT EXISTS `adminuser` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(32) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `adminuser`
---
-
-LOCK TABLES `adminuser` WRITE;
+-- 正在导出表  dianchi.adminuser 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `adminuser` DISABLE KEYS */;
 /*!40000 ALTER TABLE `adminuser` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `companys`
---
-
-DROP TABLE IF EXISTS `companys`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `companys` (
+-- 导出  表 dianchi.companys 结构
+CREATE TABLE IF NOT EXISTS `companys` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `companyname` varchar(200) NOT NULL,
   `companytype` varchar(100) NOT NULL,
@@ -65,25 +48,13 @@ CREATE TABLE `companys` (
   KEY `usersid` (`usersid`),
   CONSTRAINT `FK_companys_myuser` FOREIGN KEY (`usersid`) REFERENCES `myuser` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `companys`
---
-
-LOCK TABLES `companys` WRITE;
+-- 正在导出表  dianchi.companys 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `companys` DISABLE KEYS */;
 /*!40000 ALTER TABLE `companys` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `intellectualdemonstration`
---
-
-DROP TABLE IF EXISTS `intellectualdemonstration`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `intellectualdemonstration` (
+-- 导出  表 dianchi.intellectualdemonstration 结构
+CREATE TABLE IF NOT EXISTS `intellectualdemonstration` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `companyid` int(11) unsigned NOT NULL,
   `projectnumber` varchar(50) DEFAULT '0',
@@ -104,29 +75,18 @@ CREATE TABLE `intellectualdemonstration` (
   `status` tinyint(4) DEFAULT NULL,
   `reportdate` varchar(50) DEFAULT NULL,
   `ts` int(2) DEFAULT NULL COMMENT '暂存标识',
+  `opinion` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_intellectualdemonstration_companys` (`companyid`),
   CONSTRAINT `FK_intellectualdemonstration_companys` FOREIGN KEY (`companyid`) REFERENCES `companys` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `intellectualdemonstration`
---
-
-LOCK TABLES `intellectualdemonstration` WRITE;
+-- 正在导出表  dianchi.intellectualdemonstration 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `intellectualdemonstration` DISABLE KEYS */;
 /*!40000 ALTER TABLE `intellectualdemonstration` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `intellectualdemonstrationexpect`
---
-
-DROP TABLE IF EXISTS `intellectualdemonstrationexpect`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `intellectualdemonstrationexpect` (
+-- 导出  表 dianchi.intellectualdemonstrationexpect 结构
+CREATE TABLE IF NOT EXISTS `intellectualdemonstrationexpect` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `intellectualid` int(11) unsigned NOT NULL,
   `firstsellincome` float DEFAULT NULL,
@@ -212,25 +172,13 @@ CREATE TABLE `intellectualdemonstrationexpect` (
   KEY `FK_intellectualdemonstrationexpect_intellectualdemonstration` (`intellectualid`),
   CONSTRAINT `FK_intellectualdemonstrationexpect_intellectualdemonstration` FOREIGN KEY (`intellectualid`) REFERENCES `intellectualdemonstration` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `intellectualdemonstrationexpect`
---
-
-LOCK TABLES `intellectualdemonstrationexpect` WRITE;
+-- 正在导出表  dianchi.intellectualdemonstrationexpect 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `intellectualdemonstrationexpect` DISABLE KEYS */;
 /*!40000 ALTER TABLE `intellectualdemonstrationexpect` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `intellectualdemonstrationstorage`
---
-
-DROP TABLE IF EXISTS `intellectualdemonstrationstorage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `intellectualdemonstrationstorage` (
+-- 导出  表 dianchi.intellectualdemonstrationstorage 结构
+CREATE TABLE IF NOT EXISTS `intellectualdemonstrationstorage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `intellectualdemonstrationid` int(10) unsigned NOT NULL,
   `name` varchar(200) DEFAULT NULL,
@@ -240,25 +188,13 @@ CREATE TABLE `intellectualdemonstrationstorage` (
   KEY `FK_intellectualdemonstrationstorage_intellectualdemonstration` (`intellectualdemonstrationid`),
   CONSTRAINT `FK_intellectualdemonstrationstorage_intellectualdemonstration` FOREIGN KEY (`intellectualdemonstrationid`) REFERENCES `intellectualdemonstration` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `intellectualdemonstrationstorage`
---
-
-LOCK TABLES `intellectualdemonstrationstorage` WRITE;
+-- 正在导出表  dianchi.intellectualdemonstrationstorage 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `intellectualdemonstrationstorage` DISABLE KEYS */;
 /*!40000 ALTER TABLE `intellectualdemonstrationstorage` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `intellectualpropertyallowance`
---
-
-DROP TABLE IF EXISTS `intellectualpropertyallowance`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `intellectualpropertyallowance` (
+-- 导出  表 dianchi.intellectualpropertyallowance 结构
+CREATE TABLE IF NOT EXISTS `intellectualpropertyallowance` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `companyid` int(11) unsigned NOT NULL,
   `patenttype` varchar(50) DEFAULT NULL,
@@ -276,29 +212,18 @@ CREATE TABLE `intellectualpropertyallowance` (
   `status` tinyint(4) DEFAULT NULL,
   `reportdate` date DEFAULT NULL,
   `ts` int(2) DEFAULT NULL COMMENT '暂存标识',
+  `opinion` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_intellectualpropertyallowance_companys` (`companyid`),
   CONSTRAINT `FK_intellectualpropertyallowance_companys` FOREIGN KEY (`companyid`) REFERENCES `companys` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='知识产权补助';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `intellectualpropertyallowance`
---
-
-LOCK TABLES `intellectualpropertyallowance` WRITE;
+-- 正在导出表  dianchi.intellectualpropertyallowance 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `intellectualpropertyallowance` DISABLE KEYS */;
 /*!40000 ALTER TABLE `intellectualpropertyallowance` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `intellectualpropertyallowancestorage`
---
-
-DROP TABLE IF EXISTS `intellectualpropertyallowancestorage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `intellectualpropertyallowancestorage` (
+-- 导出  表 dianchi.intellectualpropertyallowancestorage 结构
+CREATE TABLE IF NOT EXISTS `intellectualpropertyallowancestorage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `intellectualpropertyallowanceid` int(10) NOT NULL,
   `name` varchar(200) DEFAULT NULL,
@@ -308,25 +233,13 @@ CREATE TABLE `intellectualpropertyallowancestorage` (
   KEY `FK_allowancestorage_allowance` (`intellectualpropertyallowanceid`),
   CONSTRAINT `FK_allowancestorage_allowance` FOREIGN KEY (`intellectualpropertyallowanceid`) REFERENCES `intellectualpropertyallowance` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `intellectualpropertyallowancestorage`
---
-
-LOCK TABLES `intellectualpropertyallowancestorage` WRITE;
+-- 正在导出表  dianchi.intellectualpropertyallowancestorage 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `intellectualpropertyallowancestorage` DISABLE KEYS */;
 /*!40000 ALTER TABLE `intellectualpropertyallowancestorage` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `intellectualpropertyapply`
---
-
-DROP TABLE IF EXISTS `intellectualpropertyapply`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `intellectualpropertyapply` (
+-- 导出  表 dianchi.intellectualpropertyapply 结构
+CREATE TABLE IF NOT EXISTS `intellectualpropertyapply` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `companyid` int(11) unsigned NOT NULL,
   `name` varchar(50) DEFAULT NULL,
@@ -347,29 +260,18 @@ CREATE TABLE `intellectualpropertyapply` (
   `status` tinyint(4) DEFAULT NULL,
   `reportdate` date DEFAULT NULL,
   `ts` int(2) DEFAULT NULL COMMENT '暂存标识',
+  `opinion` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_intellectualpropertyapply_companys` (`companyid`),
   CONSTRAINT `FK_intellectualpropertyapply_companys` FOREIGN KEY (`companyid`) REFERENCES `companys` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='知识产权先进个人/优秀工作者认定申请表';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `intellectualpropertyapply`
---
-
-LOCK TABLES `intellectualpropertyapply` WRITE;
+-- 正在导出表  dianchi.intellectualpropertyapply 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `intellectualpropertyapply` DISABLE KEYS */;
 /*!40000 ALTER TABLE `intellectualpropertyapply` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `intellectualpropertyapplystorage`
---
-
-DROP TABLE IF EXISTS `intellectualpropertyapplystorage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `intellectualpropertyapplystorage` (
+-- 导出  表 dianchi.intellectualpropertyapplystorage 结构
+CREATE TABLE IF NOT EXISTS `intellectualpropertyapplystorage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `intellectualpropertyapplyid` int(10) unsigned NOT NULL,
   `name` varchar(200) DEFAULT NULL,
@@ -379,25 +281,13 @@ CREATE TABLE `intellectualpropertyapplystorage` (
   KEY `FK_intellectualpropertyapplystorage_intellectualpropertyapply` (`intellectualpropertyapplyid`),
   CONSTRAINT `FK_intellectualpropertyapplystorage_intellectualpropertyapply` FOREIGN KEY (`intellectualpropertyapplyid`) REFERENCES `intellectualpropertyapply` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `intellectualpropertyapplystorage`
---
-
-LOCK TABLES `intellectualpropertyapplystorage` WRITE;
+-- 正在导出表  dianchi.intellectualpropertyapplystorage 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `intellectualpropertyapplystorage` DISABLE KEYS */;
 /*!40000 ALTER TABLE `intellectualpropertyapplystorage` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `myuser`
---
-
-DROP TABLE IF EXISTS `myuser`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `myuser` (
+-- 导出  表 dianchi.myuser 结构
+CREATE TABLE IF NOT EXISTS `myuser` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `realm` varchar(512) DEFAULT NULL,
   `username` varchar(512) DEFAULT NULL,
@@ -412,75 +302,40 @@ CREATE TABLE `myuser` (
   `lastUpdated` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `myuser`
---
-
-LOCK TABLES `myuser` WRITE;
+-- 正在导出表  dianchi.myuser 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `myuser` DISABLE KEYS */;
-INSERT INTO `myuser` VALUES (1,NULL,'djqsys','$2a$10$Dbec9HcbZ20GbHHJy6.LxueXNFpKA5atQsuXBYpK0jaHWaU4RKE6O',NULL,NULL,'djqsys@xx.com',NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `myuser` (`id`, `realm`, `username`, `password`, `credentials`, `challenges`, `email`, `emailVerified`, `verificationToken`, `status`, `created`, `lastUpdated`) VALUES
+	(1, NULL, 'djqsys', '$2a$10$Dbec9HcbZ20GbHHJy6.LxueXNFpKA5atQsuXBYpK0jaHWaU4RKE6O', NULL, NULL, 'djqsys@xx.com', NULL, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `myuser` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `notice`
---
-
-DROP TABLE IF EXISTS `notice`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `notice` (
+-- 导出  表 dianchi.notice 结构
+CREATE TABLE IF NOT EXISTS `notice` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
   `type` varchar(200) DEFAULT NULL,
   `url` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `notice`
---
-
-LOCK TABLES `notice` WRITE;
+-- 正在导出表  dianchi.notice 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `notice` DISABLE KEYS */;
 /*!40000 ALTER TABLE `notice` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `projects`
---
-
-DROP TABLE IF EXISTS `projects`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `projects` (
+-- 导出  表 dianchi.projects 结构
+CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `projectname` varchar(200) NOT NULL,
   `projecttype` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `projects`
---
-
-LOCK TABLES `projects` WRITE;
+-- 正在导出表  dianchi.projects 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `provinceassistancefunds`
---
-
-DROP TABLE IF EXISTS `provinceassistancefunds`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `provinceassistancefunds` (
+-- 导出  表 dianchi.provinceassistancefunds 结构
+CREATE TABLE IF NOT EXISTS `provinceassistancefunds` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `companyid` int(11) unsigned NOT NULL,
   `projectname` varchar(50) DEFAULT NULL,
@@ -504,29 +359,18 @@ CREATE TABLE `provinceassistancefunds` (
   `status` tinyint(4) DEFAULT '0',
   `reportdate` date DEFAULT NULL,
   `ts` int(2) DEFAULT NULL COMMENT '暂存标识',
+  `opinion` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_provinceassistancefunds_companys` (`companyid`),
   CONSTRAINT `FK_provinceassistancefunds_companys` FOREIGN KEY (`companyid`) REFERENCES `companys` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `provinceassistancefunds`
---
-
-LOCK TABLES `provinceassistancefunds` WRITE;
+-- 正在导出表  dianchi.provinceassistancefunds 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `provinceassistancefunds` DISABLE KEYS */;
 /*!40000 ALTER TABLE `provinceassistancefunds` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `provinceassistancefundsstorage`
---
-
-DROP TABLE IF EXISTS `provinceassistancefundsstorage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `provinceassistancefundsstorage` (
+-- 导出  表 dianchi.provinceassistancefundsstorage 结构
+CREATE TABLE IF NOT EXISTS `provinceassistancefundsstorage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `provinceassistancefundsid` int(10) NOT NULL,
   `name` varchar(200) DEFAULT NULL,
@@ -536,25 +380,13 @@ CREATE TABLE `provinceassistancefundsstorage` (
   KEY `FK_provincestorage_provincefunds` (`provinceassistancefundsid`),
   CONSTRAINT `FK_provincestorage_provincefunds` FOREIGN KEY (`provinceassistancefundsid`) REFERENCES `provinceassistancefunds` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `provinceassistancefundsstorage`
---
-
-LOCK TABLES `provinceassistancefundsstorage` WRITE;
+-- 正在导出表  dianchi.provinceassistancefundsstorage 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `provinceassistancefundsstorage` DISABLE KEYS */;
 /*!40000 ALTER TABLE `provinceassistancefundsstorage` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `scienceproj`
---
-
-DROP TABLE IF EXISTS `scienceproj`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `scienceproj` (
+-- 导出  表 dianchi.scienceproj 结构
+CREATE TABLE IF NOT EXISTS `scienceproj` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `companyid` int(10) unsigned NOT NULL DEFAULT '0',
   `cooperation1` varchar(100) DEFAULT '0',
@@ -580,29 +412,18 @@ CREATE TABLE `scienceproj` (
   `enddate` varchar(50) DEFAULT NULL,
   `reportdate` date DEFAULT NULL,
   `ts` int(2) DEFAULT NULL COMMENT '暂存标识',
+  `opinion` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_scienceproj_companys` (`companyid`),
   CONSTRAINT `FK_scienceproj_companys` FOREIGN KEY (`companyid`) REFERENCES `companys` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `scienceproj`
---
-
-LOCK TABLES `scienceproj` WRITE;
+-- 正在导出表  dianchi.scienceproj 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `scienceproj` DISABLE KEYS */;
 /*!40000 ALTER TABLE `scienceproj` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `sciencestorage`
---
-
-DROP TABLE IF EXISTS `sciencestorage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `sciencestorage` (
+-- 导出  表 dianchi.sciencestorage 结构
+CREATE TABLE IF NOT EXISTS `sciencestorage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `scienceprojectid` int(10) unsigned NOT NULL DEFAULT '0',
   `name` varchar(200) DEFAULT NULL,
@@ -612,25 +433,13 @@ CREATE TABLE `sciencestorage` (
   KEY `FK_sciencestorage_scienceproj` (`scienceprojectid`),
   CONSTRAINT `FK_sciencestorage_scienceproj` FOREIGN KEY (`scienceprojectid`) REFERENCES `scienceproj` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sciencestorage`
---
-
-LOCK TABLES `sciencestorage` WRITE;
+-- 正在导出表  dianchi.sciencestorage 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `sciencestorage` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sciencestorage` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `sciprojectcontent`
---
-
-DROP TABLE IF EXISTS `sciprojectcontent`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `sciprojectcontent` (
+-- 导出  表 dianchi.sciprojectcontent 结构
+CREATE TABLE IF NOT EXISTS `sciprojectcontent` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `scienceprojectid` int(10) unsigned NOT NULL DEFAULT '0',
   `necessity` varchar(520) DEFAULT '0',
@@ -643,25 +452,13 @@ CREATE TABLE `sciprojectcontent` (
   KEY `FK_sciprojectcontent_scienceproj` (`scienceprojectid`),
   CONSTRAINT `FK_sciprojectcontent_scienceproj` FOREIGN KEY (`scienceprojectid`) REFERENCES `scienceproj` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sciprojectcontent`
---
-
-LOCK TABLES `sciprojectcontent` WRITE;
+-- 正在导出表  dianchi.sciprojectcontent 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `sciprojectcontent` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sciprojectcontent` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `sciprojectoutput`
---
-
-DROP TABLE IF EXISTS `sciprojectoutput`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `sciprojectoutput` (
+-- 导出  表 dianchi.sciprojectoutput 结构
+CREATE TABLE IF NOT EXISTS `sciprojectoutput` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `scienceprojectid` int(10) unsigned NOT NULL,
   `newproducts` int(11) unsigned DEFAULT '0',
@@ -865,25 +662,13 @@ CREATE TABLE `sciprojectoutput` (
   KEY `FK_sciprojectoutput_scienceproj` (`scienceprojectid`),
   CONSTRAINT `FK_sciprojectoutput_scienceproj` FOREIGN KEY (`scienceprojectid`) REFERENCES `scienceproj` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sciprojectoutput`
---
-
-LOCK TABLES `sciprojectoutput` WRITE;
+-- 正在导出表  dianchi.sciprojectoutput 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `sciprojectoutput` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sciprojectoutput` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `sciprojectsupportcondition`
---
-
-DROP TABLE IF EXISTS `sciprojectsupportcondition`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `sciprojectsupportcondition` (
+-- 导出  表 dianchi.sciprojectsupportcondition 结构
+CREATE TABLE IF NOT EXISTS `sciprojectsupportcondition` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `scienceprojectid` int(10) unsigned NOT NULL DEFAULT '0',
   `projectmanagerule` varchar(100) DEFAULT '0',
@@ -926,49 +711,24 @@ CREATE TABLE `sciprojectsupportcondition` (
   KEY `FK_sciprojectsupportcondition_scienceproj` (`scienceprojectid`),
   CONSTRAINT `FK_sciprojectsupportcondition_scienceproj` FOREIGN KEY (`scienceprojectid`) REFERENCES `scienceproj` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sciprojectsupportcondition`
---
-
-LOCK TABLES `sciprojectsupportcondition` WRITE;
+-- 正在导出表  dianchi.sciprojectsupportcondition 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `sciprojectsupportcondition` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sciprojectsupportcondition` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `storagefile`
---
-
-DROP TABLE IF EXISTS `storagefile`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `storagefile` (
+-- 导出  表 dianchi.storagefile 结构
+CREATE TABLE IF NOT EXISTS `storagefile` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
   `type` varchar(200) DEFAULT NULL,
   `url` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `storagefile`
---
-
-LOCK TABLES `storagefile` WRITE;
+-- 正在导出表  dianchi.storagefile 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `storagefile` DISABLE KEYS */;
 /*!40000 ALTER TABLE `storagefile` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-10-23 10:12:29
