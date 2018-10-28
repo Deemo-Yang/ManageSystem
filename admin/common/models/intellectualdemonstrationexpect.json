@@ -59,38 +59,6 @@
       },
       "_selectable": true
     },
-    "firstsellprofit": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "firstsellprofit",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "firstselltaxes": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "firstselltaxes",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
     "firstproductsincome": {
       "type": "Number",
       "required": false,
@@ -107,30 +75,14 @@
       },
       "_selectable": true
     },
-    "firstproductsprofit": {
+    "firstporductpercent": {
       "type": "Number",
       "required": false,
       "length": null,
       "precision": 12,
       "scale": null,
       "mysql": {
-        "columnName": "firstproductsprofit",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "firstproductstaxes": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "firstproductstaxes",
+        "columnName": "firstporductpercent",
         "dataType": "float",
         "dataLength": null,
         "dataPrecision": 12,
@@ -155,38 +107,6 @@
       },
       "_selectable": true
     },
-    "secondsellprofit": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "secondsellprofit",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "secondselltaxes": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "secondselltaxes",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
     "secondproductsincome": {
       "type": "Number",
       "required": false,
@@ -203,30 +123,14 @@
       },
       "_selectable": true
     },
-    "secondproductsprofit": {
+    "secondproductpercent": {
       "type": "Number",
       "required": false,
       "length": null,
       "precision": 12,
       "scale": null,
       "mysql": {
-        "columnName": "secondproductsprofit",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "secondproductstaxes": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "secondproductstaxes",
+        "columnName": "secondproductpercent",
         "dataType": "float",
         "dataLength": null,
         "dataPrecision": 12,
@@ -251,38 +155,6 @@
       },
       "_selectable": true
     },
-    "thirdsellprofit": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "thirdsellprofit",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "thirdselltaxes": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "thirdselltaxes",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
     "thirdproductsincome": {
       "type": "Number",
       "required": false,
@@ -299,30 +171,14 @@
       },
       "_selectable": true
     },
-    "thirdproductsprofit": {
+    "thirdproductpercent": {
       "type": "Number",
       "required": false,
       "length": null,
       "precision": 12,
       "scale": null,
       "mysql": {
-        "columnName": "thirdproductsprofit",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "thirdproductstaxes": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "thirdproductstaxes",
+        "columnName": "thirdproductpercent",
         "dataType": "float",
         "dataLength": null,
         "dataPrecision": 12,
@@ -1148,15 +1004,15 @@
       "_selectable": true
     },
     "firstpercent": {
-      "type": "Number",
+      "type": "String",
       "required": false,
-      "length": 20,
+      "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
         "columnName": "firstpercent",
-        "dataType": "float",
-        "dataLength": 20,
+        "dataType": "varchar",
+        "dataLength": 50,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "Y"
@@ -1212,15 +1068,15 @@
       "_selectable": true
     },
     "secondpercent": {
-      "type": "Number",
+      "type": "String",
       "required": false,
-      "length": 20,
+      "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
         "columnName": "secondpercent",
-        "dataType": "float",
-        "dataLength": 20,
+        "dataType": "varchar",
+        "dataLength": 50,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "Y"
@@ -1276,15 +1132,15 @@
       "_selectable": true
     },
     "thirdpercent": {
-      "type": "Number",
+      "type": "String",
       "required": false,
-      "length": 20,
+      "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
         "columnName": "thirdpercent",
-        "dataType": "Float",
-        "dataLength": 20,
+        "dataType": "varchar",
+        "dataLength": 50,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "Y"
