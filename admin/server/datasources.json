@@ -10,7 +10,7 @@
     "root": "./server/storage"
   },
   "mysql": {
-    "host": "localhost",
+    "host": "49.4.80.58",
     "port": 3306,
     "url": "",
     "database": "dianchi",
@@ -18,6 +18,8 @@
     "name": "mysql",
     "user": "root",
     "connector": "mysql",
-    "models": {}
+    "models": {
+
+    }
   }
 }

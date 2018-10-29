@@ -48,63 +48,13 @@
     "$promise": {},
     "$resolved": true
   },
-  "Adminuser": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Companys": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Intellectualdemonstration": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Intellectualdemonstrationexpect": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Intellectualdemonstrationstorage": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Intellectualpropertyallowancestorage": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Intellectualpropertyapply": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Intellectualpropertyapplystorage": {
-    "dataSource": "mysql",
-    "public": true
-  },
   "Projects": {
     "dataSource": "mysql",
-    "public": true
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   },
-  "Provinceassistancefundsstorage": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Scienceproj": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Notice": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Intellectualpropertyallowance": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Provinceassistancefunds": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "Sciencestorage": {
+  "Companys": {
     "dataSource": "mysql",
     "public": true
   },
@@ -116,10 +66,72 @@
     "dataSource": "mysql",
     "public": true
   },
+  "Sciencestorage": {
+    "dataSource": "mysql",
+    "public": true
+  },
   "Sciprojectoutput": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Intellectualdemonstrationexpect": {
     "dataSource": "mysql",
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "Intellectualdemonstrationstorage": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Intellectualpropertyallowancestorage": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Intellectualpropertyapplystorage": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Provinceassistancefundsstorage": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Intellectualdemonstration": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Intellectualpropertyallowance": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Intellectualpropertyapply": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Scienceproj": {
+    "dataSource": "mysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Provinceassistancefunds": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Notice": {
+    "dataSource": "mysql",
+    "public": true
   }
 }
