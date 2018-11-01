@@ -1,5 +1,5 @@
 {
-  "name": "Districtfunds",
+  "name": "Intellectualdemonstration",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
@@ -7,7 +7,7 @@
   },
   "mysql": {
     "schema": "dianchi",
-    "table": "districtfunds"
+    "table": "intellectualdemonstration"
   },
   "properties": {
     "id": {
@@ -27,14 +27,30 @@
       },
       "_selectable": false
     },
-    "companyname": {
+    "companyid": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "companyid",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      },
+      "_selectable": false
+    },
+    "projectnumber": {
       "type": "String",
       "required": false,
       "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "companyname",
+        "columnName": "projectnumber",
         "dataType": "varchar",
         "dataLength": 50,
         "dataPrecision": null,
@@ -43,14 +59,14 @@
       },
       "_selectable": true
     },
-    "projectname": {
+    "authenticationtype": {
       "type": "String",
       "required": false,
       "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "projectname",
+        "columnName": "authenticationtype",
         "dataType": "varchar",
         "dataLength": 50,
         "dataPrecision": null,
@@ -59,14 +75,46 @@
       },
       "_selectable": true
     },
-    "lastyearincome": {
+    "startdate": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "startdate",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "enddate": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "enddate",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "funds": {
       "type": "Number",
       "required": false,
       "length": null,
       "precision": 12,
       "scale": null,
       "mysql": {
-        "columnName": "lastyearincome",
+        "columnName": "funds",
         "dataType": "float",
         "dataLength": null,
         "dataPrecision": 12,
@@ -75,30 +123,78 @@
       },
       "_selectable": true
     },
-    "employedperson": {
+    "contactperson": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "contactperson",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "contactphone": {
       "type": "Number",
       "required": false,
       "length": null,
-      "precision": 10,
+      "precision": 19,
       "scale": 0,
       "mysql": {
-        "columnName": "employedperson",
-        "dataType": "int",
+        "columnName": "contactphone",
+        "dataType": "bigint",
         "dataLength": null,
-        "dataPrecision": 10,
+        "dataPrecision": 19,
         "dataScale": 0,
         "nullable": "Y"
       },
       "_selectable": true
     },
-    "projecttype": {
+    "implementationplan": {
+      "type": "String",
+      "required": false,
+      "length": 500,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "implementationplan",
+        "dataType": "varchar",
+        "dataLength": 500,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "fundspurpose": {
+      "type": "String",
+      "required": false,
+      "length": 500,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "fundspurpose",
+        "dataType": "varchar",
+        "dataLength": 500,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "responseperson": {
       "type": "String",
       "required": false,
       "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "projecttype",
+        "columnName": "responseperson",
         "dataType": "varchar",
         "dataLength": 50,
         "dataPrecision": null,
@@ -107,14 +203,14 @@
       },
       "_selectable": true
     },
-    "technologycompany": {
+    "fillformperson": {
       "type": "String",
       "required": false,
       "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "technologycompany",
+        "columnName": "fillformperson",
         "dataType": "varchar",
         "dataLength": 50,
         "dataPrecision": null,
@@ -123,14 +219,30 @@
       },
       "_selectable": true
     },
-    "listedcompany": {
+    "phone": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 19,
+      "scale": 0,
+      "mysql": {
+        "columnName": "phone",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": 19,
+        "dataScale": 0,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "firstyear": {
       "type": "String",
       "required": false,
       "length": 50,
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "listedcompany",
+        "columnName": "firstyear",
         "dataType": "varchar",
         "dataLength": 50,
         "dataPrecision": null,
@@ -139,110 +251,30 @@
       },
       "_selectable": true
     },
-    "rdfundsinvestment": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "rdfundsinvestment",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "rdsubsidyfundsinvestment": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "rdsubsidyfundsinvestment",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "informationfundsinvestment": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "informationfundsinvestment",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "informationsubsidyfundsinvestment": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "informationsubsidyfundsinvestment",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "applylistedsubsidy": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "applylistedsubsidy",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "assignmentsubsidy": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 12,
-      "scale": null,
-      "mysql": {
-        "columnName": "assignmentsubsidy",
-        "dataType": "float",
-        "dataLength": null,
-        "dataPrecision": 12,
-        "dataScale": null,
-        "nullable": "Y"
-      },
-      "_selectable": true
-    },
-    "reportdata": {
+    "secondyear": {
       "type": "String",
       "required": false,
-      "length": null,
-      "precision": 12,
+      "length": 50,
+      "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "reportdata",
+        "columnName": "secondyear",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "thirdyear": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "thirdyear",
         "dataType": "varchar",
         "dataLength": 50,
         "dataPrecision": null,
@@ -267,6 +299,38 @@
       },
       "_selectable": true
     },
+    "reportdate": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "reportdate",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
+    "ts": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "ts",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "Y"
+      },
+      "_selectable": true
+    },
     "opinion": {
       "type": "String",
       "required": false,
@@ -282,22 +346,6 @@
         "nullable": "Y"
       },
       "_selectable": true
-    },
-    "companyid": {
-      "type": "Number",
-      "required": true,
-      "length": null,
-      "precision": 10,
-      "scale": 0,
-      "mysql": {
-        "columnName": "companyid",
-        "dataType": "int",
-        "dataLength": null,
-        "dataPrecision": 10,
-        "dataScale": 0,
-        "nullable": "N"
-      },
-      "_selectable": false
     }
   },
   "validations": [],

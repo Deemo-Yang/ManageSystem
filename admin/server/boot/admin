@@ -10,16 +10,16 @@ app.models.Myuser.create([{
   if (err) throw err;
   console.log('Admin account created.');
 
-  app.models.Myuser.generateVerificationToken(users[0].id, function(err, token){
-    app.models.Myuser.confirm(users[0].id, token.id, null, function(err, result) {
-      if (err) throw err;
-      console.log('Automatic verified; Ok to login');
-    });
-  });
+  // app.models.Myuser.generateVerificationToken(users[0].id, function(err, token){
+  //   app.models.Myuser.confirm(users[0].id, token.id, null, function(err, result) {
+  //     if (err) throw err;
+  //     console.log('Automatic verified; Ok to login');
+  //   });
+  // });
 
   //create the admin role
   app.models.Role.create({
-    name: 'admini'
+    name: 'admin'
   }, function(err, role) {
     if (err) throw err;
 
