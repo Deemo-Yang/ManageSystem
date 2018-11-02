@@ -235,14 +235,14 @@
       },
       "_selectable": true
     },
-    "reportdata": {
+    "reportdate": {
       "type": "String",
       "required": false,
       "length": null,
       "precision": 12,
       "scale": null,
       "mysql": {
-        "columnName": "reportdata",
+        "columnName": "reportdate",
         "dataType": "varchar",
         "dataLength": 50,
         "dataPrecision": null,

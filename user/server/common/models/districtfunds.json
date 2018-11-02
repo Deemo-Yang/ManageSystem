@@ -235,7 +235,7 @@
       },
       "_selectable": true
     },
-    "reportdata": {
+    "reportdate": {
       "type": "String",
       "required": false,
       "length": null,
